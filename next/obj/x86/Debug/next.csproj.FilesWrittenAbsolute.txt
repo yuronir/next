@@ -1,0 +1,5 @@
+/Users/yawol/Projects/next/next/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/yawol/Projects/next/next/bin/Debug/next.exe.mdb
+/Users/yawol/Projects/next/next/bin/Debug/next.exe
+/Users/yawol/Projects/next/next/obj/x86/Debug/next.exe
+/Users/yawol/Projects/next/next/obj/x86/Debug/next.exe.mdb

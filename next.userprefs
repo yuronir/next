@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="next/lab1.cs">
+    <Files>
+      <File FileName="next/lab2.cs" Line="9" Column="29" />
+      <File FileName="next/lab4.cs" Line="96" Column="1" />
+      <File FileName="next/lab3.cs" Line="28" Column="16" />
+      <File FileName="next/lab1.cs" Line="8" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

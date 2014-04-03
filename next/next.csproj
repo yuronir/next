@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="0321\lab1.cs" />
+    <Compile Include="Homework_4week\lab1.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -43,8 +43,13 @@
     <None Include="0321\lab2.cs" />
     <None Include="0321\lab3.cs" />
     <None Include="0321\lab4.cs" />
+    <None Include="0321\lab1.cs" />
+    <None Include="Homework_4week\lab2.cs" />
+    <None Include="Homework_4week\lab3.cs" />
+    <None Include="Homework_4week\lab4.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="0321\" />
+    <Folder Include="Homework_4week\" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="next/Homework_4week/lab4.cs">
+    <Files>
+      <File FileName="next/Homework_4week/lab1.cs" Line="17" Column="2" />
+      <File FileName="next/Homework_4week/lab2.cs" Line="12" Column="6" />
+      <File FileName="next/Homework_4week/lab3.cs" Line="22" Column="14" />
+      <File FileName="next/Homework_4week/lab4.cs" Line="22" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

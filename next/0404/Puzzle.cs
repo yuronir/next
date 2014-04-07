@@ -2,6 +2,7 @@
 
 namespace next
 {
+	//키보드이벤트를 얻기 위해선 XNA 프레임워크 필요!
 	public class Puzzle
 	{
 		public static void Main ()
@@ -13,7 +14,7 @@ namespace next
 			object[,] puzzle;
 
 			while(true){
-			
+				Console.Clear ();
 				puzSize = getRangedInteger(2,5,"퍼즐의 크기를 선택해주세요(2~5)");
 				Console.WriteLine ("{0} X {0} 퍼즐입니다.", puzSize);
 
@@ -25,13 +26,15 @@ namespace next
 				viewPuzzle (puzSize, puzzle);
 				startPuzzle (puzSize, puzzle);
 
-				isRestart = getChosenString(answerSet, "계속하시겠습니까?");
+				isRestart = getChosenString(answerSet, "계속하시겠습니까? Y/N ");
 				if (isRestart == "Y" || isRestart == "y") {
 					continue;
 				} else {
 					break;
 				}
 			}
+
+			Console.WriteLine ("\n게임을 종료합니다. 감사합니다.\n");
 		}
 
 		//Reset Puzzle
@@ -45,6 +48,9 @@ namespace next
 			int moveCount = 0;
 			string movement;
 			object[,] ansPuz = answerPuzzle (puzSize);
+
+
+
 
 			Console.WriteLine ("퍼즐을 시작합니다.\n");
 

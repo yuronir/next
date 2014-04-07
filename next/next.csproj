@@ -53,6 +53,10 @@
     <None Include="0404\Lab3.cs" />
     <None Include="0404\Ex1.cs" />
     <None Include="0404\Ex2.cs" />
+    <None Include="0404\Ex3.cs" />
+    <None Include="0404\Ex4.cs" />
+    <None Include="0404\Ex5.cs" />
+    <None Include="0404\Lab4.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="0321\" />

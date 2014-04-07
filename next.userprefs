@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="next/Homework_4week/lab4.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="next/0404/Puzzle.cs">
     <Files>
-      <File FileName="next/Homework_4week/lab1.cs" Line="17" Column="2" />
-      <File FileName="next/Homework_4week/lab2.cs" Line="12" Column="6" />
-      <File FileName="next/Homework_4week/lab3.cs" Line="22" Column="14" />
-      <File FileName="next/Homework_4week/lab4.cs" Line="22" Column="3" />
+      <File FileName="next/0404/Puzzle.cs" Line="13" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

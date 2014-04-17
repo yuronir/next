@@ -2,9 +2,16 @@
 
 namespace next
 {
-	//키보드이벤트를 얻기 위해선 XNA 프레임워크 필요!
+	/*
+	 * Number Puzzle
+	 * Author : Lee Yong Eun
+	 * Date : 2014.04.07
+	 *
+	 */
 	public class Puzzle
 	{
+		//키보드이벤트를 얻기 위해선 XNA 프레임워크 필요!
+		//퍼즐 위에서 커서를 이동시켜서 작동시키기!
 		public static void Main ()
 		{
 			int puzSize;
@@ -145,6 +152,9 @@ namespace next
 				puzzle [temp [0], temp [1] - 1] = teemp;
 
 				break;
+			case "I will kill you!":
+				puzzle = answerPuzzle (puzSize);
+				break;
 			default:
 				Console.WriteLine ("W, S, A, D 중의 하나를 선택해주세요.");
 				break;
@@ -177,61 +187,25 @@ namespace next
 		//퍼즐을 섞는 함수
 		public static object[,] mixPuzzle(int puzSize, object[,] puzzle){
 			Random rd = new Random();
-			object teemp;
-			int[] temp;
-			int mixCount = rd.Next (100, 300);
+			object temp;
+			int[,] tempIJ = new int[2,2];
+			int mixCount = rd.Next (100, 301); //100~300번 섞기.
 
 			for(int i = 0; i < mixCount; i++){
-				temp = findBlank (puzSize, puzzle);
-				int rdTemp = rd.Next(0, 4);
+				tempIJ[0,0] = rd.Next (0, puzSize);
+				tempIJ[0,1] = rd.Next (0, puzSize);
+				tempIJ[1,0] = rd.Next (0, puzSize);
+				tempIJ[1,1] = rd.Next (0, puzSize);
 
-				switch (rdTemp) {
-				case 0:
-					if (temp [0] == puzSize - 1)
-						goto FAIL;
-
-					teemp = puzzle [temp [0], temp [1]];
-					puzzle [temp [0], temp [1]] = puzzle [temp [0] + 1, temp [1]];
-					puzzle [temp [0] + 1, temp [1]] = teemp;
-
-					break;
-				case 1:
-					if (temp [0] == 0)
-						goto FAIL;
-
-					teemp = puzzle [temp [0], temp [1]];
-					puzzle [temp [0], temp [1]] = puzzle [temp [0] - 1, temp [1]];
-					puzzle [temp [0] - 1, temp [1]] = teemp;
-
-					break;
-				case 2:
-					if (temp [1] == puzSize - 1)
-						goto FAIL;
-
-					teemp = puzzle [temp [0], temp [1]];
-					puzzle [temp [0], temp [1]] = puzzle [temp [0], temp [1] + 1];
-					puzzle [temp [0], temp [1] + 1] = teemp;
-
-					break;
-				case 3:
-					if (temp [1] == 0)
-						goto FAIL;
-
-					teemp = puzzle [temp [0], temp [1]];
-					puzzle [temp [0], temp [1]] = puzzle [temp [0], temp [1] - 1];
-					puzzle [temp [0], temp [1] - 1] = teemp;
-
-					break;
-				
-					//if failed move, don't count.
-					FAIL: i--;
-					break;
-				}
+				temp = puzzle [tempIJ [0, 0], tempIJ [0, 1]];
+				puzzle [tempIJ [0, 0], tempIJ [0, 1]] = puzzle [tempIJ [1, 0], tempIJ [1, 1]];
+				puzzle [tempIJ [1, 0], tempIJ [1, 1]] = temp;
 			}
 
 			return puzzle;
 		}
 
+		//퍼즐이 완성되었는지 확인하기 위한 함수(두 퍼즐이 같으면 true 반환)
 		public static bool isPuzEqual(int puzSize, object[,] puz1, object[,] puz2){
 
 			bool isEqual = true;

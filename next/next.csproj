@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Homework_6week\NumPuzzle.cs" />
+    <Compile Include="Homework_7week\Lab3.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -60,7 +60,18 @@
     <None Include="Homework_5week\Lab1.cs" />
     <None Include="Homework_5week\Lab2.cs" />
     <None Include="Homework_5week\Lab3.cs" />
+    <None Include="Homework_6week\NumPuzzle.cs" />
+    <None Include="Homework_6week\Numpuzzle_Professor.cs" />
     <None Include="0404\Puzzle.cs" />
+    <None Include="0418_7week\Static1.cs" />
+    <None Include="0418_7week\Static2.cs" />
+    <None Include="0418_7week\Lab1.cs" />
+    <None Include="0418_7week\Lab2.cs" />
+    <None Include="0418_7week\Lab3.cs" />
+    <None Include="0418_7week\Lab4.cs" />
+    <None Include="etc\descrete.cs" />
+    <None Include="Homework_7week\Lab1.cs" />
+    <None Include="Homework_7week\Lab2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="0321\" />
@@ -68,5 +79,8 @@
     <Folder Include="0404\" />
     <Folder Include="Homework_5week\" />
     <Folder Include="Homework_6week\" />
+    <Folder Include="0418_7week\" />
+    <Folder Include="etc\" />
+    <Folder Include="Homework_7week\" />
   </ItemGroup>
 </Project>

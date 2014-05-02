@@ -1,0 +1,4 @@
+C:\next\next\obj\x86\Debug\next.exe
+C:\next\next\bin\Debug\next.exe
+C:\next\next\bin\Debug\next.pdb
+C:\next\next\obj\x86\Debug\next.pdb

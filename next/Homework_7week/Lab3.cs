@@ -74,6 +74,7 @@ namespace next
 			}
 
 			Console.WriteLine ("님이 밥을 사시면 되겠습니다. ㅊㅋㅊㅋ!");
+            Console.WriteLine("hahahahah!");
 		}
 
 		static void swap(List<int> n, int Ran1, int Ran2)

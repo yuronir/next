@@ -33,8 +33,12 @@ namespace next.etc
             maze = MakeMaze();  //미로 초기화
             FindRightRoot();    //우선법
 
+            Thread.Sleep(500);
+
             maze = MakeMaze();  //미로 초기화
             FindLeftRoot();     //좌선법
+
+            Thread.Sleep(500);
 
             Console.Clear();
 
@@ -145,7 +149,7 @@ namespace next.etc
                         maze[nowLoc[0]][nowLoc[1]] = "4";
                         nowLoc = mazeMouse.Pop();
 
-                        if (nowLoc == moveEnd) //출구에 도달하지 못한 경우
+                        if (nowLoc == moveEnd) //출구에 도달할 수 없는 경우
                         {
                             if (isRight)
                                 rightDistance = -1;
@@ -187,23 +191,18 @@ namespace next.etc
 
             if (rightDistance == -1 && leftDistance == -1)
                 Console.WriteLine("출구에 도달할 수 없습니다.");
-            else if (rightDistance != -1)
+            else if (rightDistance > leftDistance)
             {
                 if (leftDistance != -1 && rightDistance > leftDistance)
                 {
                     PrintMaze(leftRoot);
                     Console.WriteLine("최단거리 : {0}", leftDistance);
                 }
-                else
-                {
-                    PrintMaze(rightRoot);
-                    Console.WriteLine("최단거리 : {0}", rightDistance);
-                }
             }
             else
             {
-                PrintMaze(leftRoot);
-                Console.WriteLine("최단거리 : {0}", leftDistance);
+                PrintMaze(rightRoot);
+                Console.WriteLine("최단거리 : {0}", rightDistance);
             }
         }
     }

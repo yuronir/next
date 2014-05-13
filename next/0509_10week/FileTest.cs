@@ -22,7 +22,7 @@ namespace next._0509_10week
             string fullname = dir + "\\" + name; //\\라고 써야 \가 입력된다.(특수문자라서)
             int lineNum = 1;
             Console.WriteLine(fullname);
-
+            
             StreamReader r = new StreamReader(fullname, Encoding.GetEncoding("euc-kr")); //한글이 깨지지 않게 인코딩 유형 지정
 
             //while(r.Peek() != -1) : 아래와 같은 것.

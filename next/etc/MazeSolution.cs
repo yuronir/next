@@ -12,7 +12,7 @@ namespace next.etc
     {
         //시작점, 종료점 지정
         public static int[] startLoc = new int[2] { 1, 1 }; //현좌표(y,x)
-        public static int[] endPoint = new int[2] { 9, 9 }; //출구
+        public static int[] endLoc = new int[2] { 9, 9 }; //출구
 
         public static string[][] maze;
 
@@ -33,12 +33,8 @@ namespace next.etc
             maze = MakeMaze();  //미로 초기화
             FindRightRoot();    //우선법
 
-            Thread.Sleep(500);
-
             maze = MakeMaze();  //미로 초기화
             FindLeftRoot();     //좌선법
-
-            Thread.Sleep(500);
 
             Console.Clear();
 
@@ -64,18 +60,22 @@ namespace next.etc
                 maze[i] = mazeList[i].Split(' ');
             }
 
+            maze[endLoc[0]][endLoc[1]] = "5";
+
             return maze;
         }
 
         //미로 출력
-        //0 : 가보지 않은 길, 1 : 벽, 2 : 현위치, 3 : 지나온 길, 4 : 막힌 길
+        //0 : 가보지 않은 길, 1 : 벽, 2 : 현위치, 3 : 지나온 길, 4 : 막힌 길, 5 : 출구
         public static void PrintMaze(string[][] maze)
         {
             for (int i = 0; i < maze.Length; i++)
             {
                 for (int j = 0; j < maze[i].Length; j++)
                 {
-                    if (maze[i][j].Equals("1"))
+                    if (maze[i][j].Equals("5"))
+                        Console.Write("出");
+                    else if (maze[i][j].Equals("1"))
                         Console.Write("■");
                     else if (maze[i][j].Equals("0"))
                         Console.Write("　");
@@ -96,6 +96,8 @@ namespace next.etc
             int[,] movement = new int[4, 2] { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };//우, 하, 좌, 상
 
             MoveMouse(movement, mazeRMouse, true);
+
+            Thread.Sleep(500);
         }
 
         //출구 찾기(좌선법)
@@ -104,6 +106,8 @@ namespace next.etc
             int[,] movement = new int[4, 2] { { 0, -1 }, { 1, 0 }, { 0, 1 }, { -1, 0 } };//좌, 하, 우, 상
 
             MoveMouse(movement, mazeLMouse, false);
+
+            Thread.Sleep(500);
         }
 
         public static void MoveMouse(int[,] movement, Stack<int[]> mazeMouse, bool isRight)
@@ -116,14 +120,15 @@ namespace next.etc
             maze[nowLoc[0]][nowLoc[1]] = "2";
             int distance = 0;
 
-            while (!nowLoc.SequenceEqual(endPoint))
+            while (!nowLoc.SequenceEqual(endLoc))
             {
                 Console.Clear();
 
                 for (int i = 0; i < movement.GetLength(0); i++)
                 {
                     //해당 방향으로 나아갈 길이 있는가
-                    if (maze[nowLoc[0] + movement[i, 0]][nowLoc[1] + movement[i, 1]].Equals("0"))
+                    if (maze[nowLoc[0] + movement[i, 0]][nowLoc[1] + movement[i, 1]].Equals("0") ||
+                            maze[nowLoc[0] + movement[i, 0]][nowLoc[1] + movement[i, 1]].Equals("5"))
                     {
                         Console.WriteLine("move!");
                         mazeMouse.Push(new int[2] { nowLoc[0], nowLoc[1] });
@@ -193,11 +198,8 @@ namespace next.etc
                 Console.WriteLine("출구에 도달할 수 없습니다.");
             else if (rightDistance > leftDistance)
             {
-                if (leftDistance != -1 && rightDistance > leftDistance)
-                {
-                    PrintMaze(leftRoot);
-                    Console.WriteLine("최단거리 : {0}", leftDistance);
-                }
+                PrintMaze(leftRoot);
+                Console.WriteLine("최단거리 : {0}", leftDistance);
             }
             else
             {

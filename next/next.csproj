@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="0502_9week\Timer.cs" />
     <Compile Include="0509_10week\FileTest.cs" />
+    <Compile Include="etc\circular.cs" />
     <Compile Include="etc\MazeSolution.cs" />
     <Compile Include="etc\Ramanujan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
